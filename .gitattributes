@@ -1,0 +1,9 @@
+# Handle text files automatically and convert them to LF upon commit
+* text=auto
+
+# Explicitly declare file types to always use LF on checkout and commit
+*.js text eol=lf
+*.ts text eol=lf
+*.json text eol=lf
+*.html text eol=lf
+*.css text eol=lf

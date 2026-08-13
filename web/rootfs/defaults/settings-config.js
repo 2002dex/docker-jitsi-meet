@@ -5,6 +5,8 @@
 {{ $ENABLE_BREAKOUT_ROOMS := .Env.ENABLE_BREAKOUT_ROOMS | default "true" | toBool -}}
 {{ $ENABLE_CALENDAR := .Env.ENABLE_CALENDAR | default "false" | toBool -}}
 {{ $ENABLE_FILE_RECORDING_SHARING := .Env.ENABLE_FILE_RECORDING_SHARING | default "false" | toBool -}}
+{{ $ENABLE_IPV6_CHECK := .Env.ENABLE_IPV6_CHECK | default "true" | toBool -}}
+{{ $IPV6_CHECK_URL := .Env.IPV6_CHECK_URL | default "https://nodedata.io/my-ipv6" -}}
 {{ $ENABLE_NO_AUDIO_DETECTION := .Env.ENABLE_NO_AUDIO_DETECTION | default "true" | toBool -}}
 {{ $ENABLE_P2P := .Env.ENABLE_P2P | default "true" | toBool -}}
 {{ $ENABLE_PREJOIN_PAGE := .Env.ENABLE_PREJOIN_PAGE | default "true" | toBool -}}
@@ -321,6 +323,12 @@ config.prejoinConfig = {
 
     // Hides the participant name editing field in the prejoin screen.
     hideDisplayName: {{ $HIDE_PREJOIN_DISPLAY_NAME }}
+};
+
+// Prejoin IPv6 network support check configuration.
+config.ipv6Check = {
+    enabled: {{ $ENABLE_IPV6_CHECK }},
+    checkUrl: '{{ $IPV6_CHECK_URL }}'
 };
 
 // List of buttons to hide from the extra join options dropdown on prejoin screen.

@@ -140,6 +140,9 @@ tpl /defaults/default > /run/web/config/nginx/site-confs/default
 
 tpl /defaults/system-config.js > /run/web/config/config.js
 tpl /defaults/settings-config.js >> /run/web/config/config.js
+if [[ -f "/defaults/ipv6-check.js" ]]; then
+    cat /defaults/ipv6-check.js >> /run/web/config/config.js
+fi
 if [[ -f "/run/web/config/custom-config.js" ]]; then
     cat /run/web/config/custom-config.js >> /run/web/config/config.js
 fi

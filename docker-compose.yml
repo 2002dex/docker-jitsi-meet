@@ -75,6 +75,8 @@ services:
             - ENABLE_HSTS
             - ENABLE_HTTP_REDIRECT
             - ENABLE_IPV6
+            - ENABLE_IPV6_CHECK
+            - IPV6_CHECK_URL
             - ENABLE_LETSENCRYPT
             - ENABLE_NO_AUDIO_DETECTION
             - ENABLE_NOISY_MIC_DETECTION
